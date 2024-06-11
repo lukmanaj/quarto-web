@@ -551,6 +551,44 @@ Which renders as follows:
 
 ::::
 
+## Features available only in HTML Tables
+
+Some table features are difficult or impossible to specify using Markdown tables.
+
+In particular, the table cell HTML attributes `colspan` and `rowspan` are supported by all formats, but can't be expressed using  Quarto Markdown. (??? - need confirmation, think @cscheid said there was one way but it was awkward, does not seem to be documented) 
+
+Markdown supports specification of alignment by column, but you can set table cell CSS properties `text-align` and `vertical-align` only through Raw HTML. These are not currently supported by PDF/Latex or Pptx output formats, and Docx only supports `text-align`.
+
+````
+```{=html}
+<table>
+ <tr>
+  <th></th>
+  <th>A</th>
+  <th>B</th>
+  <th>C</th>
+ </tr>
+ <tr>
+  <th>1</th>
+  <td colspan="2" style="text-align: center">A1-B1</td>
+  <td>C3</td>
+ </tr>
+ <tr>
+  <th>2</th>
+  <td rowspan="2" style="vertical-align: middle">A2-A3</td>
+  <td style="vertical-align: top">B2</td>
+  <td style="text-align: left">C2</td>
+ </tr>
+ <tr>
+  <th>3</th>
+  <td style="vertical-align: top">B3</td>
+  <td style="text-align: right">C3</td>
+ </tr>
+</table>
+```
+````
+
+These features are available in PDF, Typst, and Docx in addition to HTML.
 
 ## Disabling Quarto Table Processing
 

@@ -200,6 +200,45 @@ In the case of glaciers, fluid dynamics principles can be used to understand how
 
 To learn more about `typst` markup, see the tutorial here: <https://typst.app/docs/tutorial/>.
 
+## Typst CSS
+
+To allow similar styling between HTML and Typst, Quarto will translate CSS properties into Typst properties.
+
+You can use CSS properties directly in your Quarto markup, and they will get translated to appropriate Typst elements and properties:
+
+```qmd
+Here is a [span with a green background]{style="background-color:green"}.
+```
+
+```qmd
+:::{style="font-family: helvetica"}
+This div is rendered in Helvetica.
+:::
+```
+
+You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here are a few examples.
+
+*Add tabset here with R flextable/gt, Python pandas examples? When I tried, the R examples cause "Error executing '/usr/local/bin/Rscript': Broken pipe (os error 32)"*
+
+This feature works for the specific combinations of HTML elements and CSS properties shown in the table below:
+
+|                  | span | div | table | td  |
+|------------------|------|-----|-------|-----|
+| background-color |   x  |     |       |  x  |
+| border[^1]       |      |     |       |  x  |
+| color            |   x  |     |       |  x  |
+| font-family      |      |  x  |   x   |     |
+| font-size        |      |  x  |   x   |     |
+| opacity          |   x  |     |       |  x  |
+| align[^2]        |      |     |       |  x  |
+
+Note that [named Typst colors](https://typst.app/docs/reference/visualize/color/#predefined-colors) will be preferred over [named CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color). If you want exactly the same color in your HTML and Typst output, specify the color using `rgb()` or hexadecimal `#rrggbb` syntax.
+
+Typst does not support opacity as a filter, so opacity is simulated using the alpha channel of the color.
+
+[^1]: `border`, `border-left` etc, `border-width`, `border-style`, `border-color`, `border-left-width` etc
+
+[^2]: `text-align`, `vertical-align`
 
 ## Typst File (`.typ`)
 

@@ -235,13 +235,13 @@ This feature works for the specific combinations of HTML elements and CSS proper
 
 |                  | span | div | table | td  |
 |------------------|------|-----|-------|-----|
-| background-color |   x  |     |       |  x  |
-| border[^1]       |      |     |       |  x  |
-| color            |   x  |     |       |  x  |
-| font-family      |      |  x  |   x   |     |
-| font-size        |      |  x  |   x   |     |
-| opacity          |   x  |     |       |  x  |
-| align[^2]        |      |     |       |  x  |
+| background-color |   ✓  |     |       |  ✓  |
+| border[^1]       |      |     |       |  ✓  |
+| color            |   ✓  |     |       |  ✓  |
+| font-family      |      |  ✓  |   ✓   |     |
+| font-size        |      |  ✓  |   ✓   |     |
+| opacity          |   ✓  |     |       |  ✓  |
+| align[^2]        |      |     |       |  ✓  |
 
 Note that [named Typst colors](https://typst.app/docs/reference/visualize/color/#predefined-colors) will be preferred over [named CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color). If you want exactly the same color in your HTML and Typst output, specify the color using `rgb()` or hexadecimal `#rrggbb` syntax.
 

@@ -17,7 +17,7 @@ It describes how Typst CSS works, how to enable and disable this feature and `pr
 
 ## How Typst CSS works
 
-Unless table processing is disabled with `html-table-processing="none"`, tables in HTML raw blocks will be parsed into the Pandoc AST and then written by the output format. 
+Unless table processing is disabled with [`html-table-processing="none"`](/docs/authoring/tables.qmd#disabling-quarto-table-processing), tables in HTML raw blocks will be parsed into the Pandoc AST and then written by the output format. 
 
 See the below section for information on `pre` tags, which are opt-in but work the same way.
 
@@ -74,12 +74,8 @@ format:
 
 You can add your own Lua filters to add or change the translation of CSS properties into Typst properties.
 
-Consult the Pandoc documentation for Typst property attribute output:
+Consult the Pandoc documentation for [Typst property output](https://pandoc.org/typst-property-output.html)
 
-<https://pandoc.org/typst-property-output.html>
-
-and the source of the Lua filter which translates properties:
-
-<https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/quarto-post/typst-css-to-props.lua>
+and the source of the [Lua filter which translates CSS properties to Typst](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/quarto-post/typst-css-to-props.lua).
 
 If your filter runs before the Typst CSS Lua filter and removes CSS properties, it can override the filter's behavior (untested). If it adds support for other CSS properties, it can run before or after the built-in filter.

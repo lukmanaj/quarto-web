@@ -218,7 +218,18 @@ This div is rendered in Helvetica.
 
 You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here are a few examples.
 
-*Add tabset here with R flextable/gt, Python pandas examples? When I tried, the R examples cause "Error executing '/usr/local/bin/Rscript': Broken pipe (os error 32)"*
+::: {.panel-tabset}
+
+#### R - flextable
+![flextable](images/typst-table-flextable.png)
+
+#### R - gt
+![gt](images/typst-table-gt.png)
+
+#### Python - pandas
+![pandas](images/typst-table-pandas.png)
+
+:::
 
 This feature works for the specific combinations of HTML elements and CSS properties shown in the table below:
 

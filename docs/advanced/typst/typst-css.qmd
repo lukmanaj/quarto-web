@@ -5,8 +5,9 @@ title: Typst CSS
 The Typst CSS feature translates CSS properties into Typst properties, to allow similar styling between the HTML formats and the Typst format.
 
 It is tuned for two use-cases:
+
 - HTML Tables styled by table packages
-- HTML `<pre>` representing console output with ANSI colors translated to `<span>`s
+- HTML `<pre>` tags representing console output with spans decorated with colors, e.g. from ANSI.
 
 This document is oriented to
 * package developers who want to produce `table` or `pre` output which can be translated to Typst
@@ -23,6 +24,25 @@ See the below section for information on `pre` tags, which are opt-in but work t
 When the output format is Typst, Quarto will [`juice`](https://github.com/Automattic/juice) the HTML input, annotating the HTML elements with CSS properties from the rules in any style sheets included in the HTML raw block.
 
 A Quarto post-processing filter translates the HTML attributes and CSS properties into attributes of the form `typst:property` or `typst:text:property`, and the Typst writer in Pandoc writes the output appropriately.
+
+## Supported Elements and Properties
+
+Typst CSS works for the specific combinations of HTML elements and CSS properties below:
+
+|                  | span | div | table | td  |
+|------------------|------|-----|-------|-----|
+| background-color |   ✓  |     |       |  ✓  |
+| border[^1]       |      |     |       |  ✓  |
+| color            |   ✓  |     |       |  ✓  |
+| font-family      |      |  ✓  |   ✓   |     |
+| font-size        |      |  ✓  |   ✓   |     |
+| opacity          |   ✓  |     |       |  ✓  |
+| align[^2]        |      |     |       |  ✓  |
+
+
+[^1]: `border`, `border-left` etc, `border-width`, `border-style`, `border-color`, `border-left-width` etc
+
+[^2]: `text-align`, `vertical-align`
 
 ## Disabling Typst CSS
 
@@ -50,7 +70,7 @@ format:
 :::
 ````
 
-## Custom Typst CSS processing
+## Modifying the translation
 
 You can add your own Lua filters to add or change the translation of CSS properties into Typst properties.
 

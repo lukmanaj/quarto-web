@@ -204,17 +204,23 @@ To learn more about `typst` markup, see the tutorial here: <https://typst.app/do
 
 To allow similar styling between HTML and Typst, Quarto will translate CSS properties into Typst properties.
 
-You can use CSS properties directly in your Quarto markup, and they will get translated to appropriate Typst elements and properties:
+You can use CSS properties directly in your Quarto markup, and they will get translated to appropriate Typst elements and properties
+
+For example, text-related properties `color`, `opacity`, and `background-color` can be applied to spans:
 
 ```qmd
 Here is a [span with a green background]{style="background-color:green"}.
 ```
+
+`font-family` and `font-size` can be applied to a div or table:
 
 ```qmd
 :::{style="font-family: helvetica"}
 This div is rendered in Helvetica.
 :::
 ```
+
+See [the Advanced documentation](/docs/advanced/typst/typst-css.qmd#supported-elements-and-properties) for supported elements and properties, and how to add more using Lua filters.
 
 You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here are a few examples.
 
@@ -231,25 +237,9 @@ You are most likely to encounter Typst CSS when using libraries that produce HTM
 
 :::
 
-This feature works for the specific combinations of HTML elements and CSS properties shown in the table below:
-
-|                  | span | div | table | td  |
-|------------------|------|-----|-------|-----|
-| background-color |   ✓  |     |       |  ✓  |
-| border[^1]       |      |     |       |  ✓  |
-| color            |   ✓  |     |       |  ✓  |
-| font-family      |      |  ✓  |   ✓   |     |
-| font-size        |      |  ✓  |   ✓   |     |
-| opacity          |   ✓  |     |       |  ✓  |
-| align[^2]        |      |     |       |  ✓  |
-
 Note that [named Typst colors](https://typst.app/docs/reference/visualize/color/#predefined-colors) will be preferred over [named CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color). If you want exactly the same color in your HTML and Typst output, specify the color using `rgb()` or hexadecimal `#rrggbb` syntax.
 
 Typst does not support opacity as a filter, so opacity is simulated using the alpha channel of the color.
-
-[^1]: `border`, `border-left` etc, `border-width`, `border-style`, `border-color`, `border-left-width` etc
-
-[^2]: `text-align`, `vertical-align`
 
 ## Typst File (`.typ`)
 

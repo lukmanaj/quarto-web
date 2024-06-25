@@ -3,8 +3,11 @@ title: "gt - cars"
 format:
   typst:
     pagenumbering: false
-bibliography: [] # don't pick up ../../../references.bib
-example-source: https://themockup.blog/static/resources/gt-cookbook.html#multiple-colors
+bibliography: [] # suppress ../../../references.bib
+references:
+  - type: website
+    id: gt-cookbook
+    url: https://themockup.blog/static/resources/gt-cookbook.html#multiple-colors
 ---
 
 ```{=typst}

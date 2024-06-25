@@ -1,8 +1,13 @@
 ---
 title: "Pandas - Data Cell CSS Classes"
-format: typst
-bibliography: [] # don't pick up ../../../references.bib
-example-source: https://pandas.pydata.org/pandas-docs/version/2.2.2/user_guide/style.html#Tooltips-and-Captions
+format:
+  typst:
+    pagenumbering: false
+bibliography: [] # suppress ../../../references.bib
+references:
+  - type: website
+    id: pandas-user-guide
+    url: https://pandas.pydata.org/pandas-docs/version/2.2.2/user_guide/style.html#Tooltips-and-Captions
 ---
 
 ```{python}

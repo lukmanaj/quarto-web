@@ -226,14 +226,15 @@ You are most likely to encounter Typst CSS when using libraries that produce HTM
 
 ::: {.panel-tabset}
 
-#### R - flextable
-![flextable](images/typst-table-flextable.png)
-
 #### R - gt
-![gt](images/typst-table-gt.png)
+![](images/typst-table-gt.png)
+
+[gt cars example source](examples/gt-cars.qmd)
 
 #### Python - pandas
-![pandas](images/typst-table-pandas.png)
+![](images/typst-table-pandas.png)
+
+[pandas confusion matrix example source](examples/pandas-confusion-matrix.qmd)
 
 :::
 

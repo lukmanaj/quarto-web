@@ -1,8 +1,7 @@
 ---
 title: "gt - cars"
 format:
-  typst:
-    pagenumbering: false
+  typst: default
 bibliography: [] # suppress ../../../references.bib
 references:
   - type: website

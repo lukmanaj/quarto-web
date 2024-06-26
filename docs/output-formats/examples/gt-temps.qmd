@@ -1,5 +1,5 @@
 ---
-title: "gt - cars"
+title: "gt - temperatures"
 format:
   typst: default
 bibliography: [] # suppress ../../../references.bib
@@ -30,7 +30,11 @@ temps %>%
   data_color(
     columns = c(-year),
     colors = scales::col_numeric(
-      c("#D33F6A", "#E99A2C", "#E2E6BD"), 
-      domain = c(37, 60))
+      colorspace::diverge_hcl(n = 9, palette = "Green-Orange"), # colorblind safe and topical
+      # colorspace::diverge_hcl(n = 9, palette = "Purple-Green") %>% rev(), # "hulk"
+      # colorspace::diverge_hcl(n = 9, palette = "Blue-Red 3"), # red-blue
+      # c("#63be7b", "#ffeb84", "#f87274"), # red-green
+      # c("#D33F6A", "#E99A2C", "#E2E6BD"), # shades of orange
+      domain = c(35, 62)) # original c(31.3, 66.6)
   )
 ```

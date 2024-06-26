@@ -235,6 +235,11 @@ You are most likely to encounter Typst CSS when using libraries that produce HTM
 
 [gt temps example](examples/gt-temps.qmd)
 
+#### Python - Pandas
+![](images/typst-tables-pandas-temps.png){height=200px}
+
+[gt temps example](examples/pandas-temps.qmd)
+
 :::
 
 Note that [named Typst colors](https://typst.app/docs/reference/visualize/color/#predefined-colors) will be preferred over [named CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color). If you want exactly the same color in your HTML and Typst output, specify the color using `rgb()` or hexadecimal `#rrggbb` syntax.

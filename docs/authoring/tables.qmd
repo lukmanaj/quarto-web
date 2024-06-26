@@ -551,7 +551,7 @@ Which renders as follows:
 
 ::::
 
-## Features available only in HTML Tables
+### Features available only in HTML Tables
 
 Some table features are difficult or impossible to specify using Markdown tables.
 
@@ -559,7 +559,7 @@ In particular, cells spanning multiple rows or columns are supported by most out
 
 Markdown supports specification of alignment by column, but does not allow setting the alignment of individual cells. The CSS properties `text-align` and `vertical-align` are only through Raw HTML. (These are not currently supported by PDF/Latex or Pptx output formats, and Docx only supports `text-align`.)
 
-````
+````html
 ```{=html}
 <table>
  <tr>

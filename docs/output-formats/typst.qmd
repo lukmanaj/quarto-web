@@ -208,17 +208,17 @@ To learn more about `typst` markup, see the tutorial here: <https://typst.app/do
 
 To allow similar styling between HTML and Typst, Quarto will translate CSS properties into Typst properties.
 
-You can use CSS properties directly in your Quarto markup, and they will get translated to appropriate Typst elements and properties
+You can use CSS properties directly in your Quarto markup, and they will get translated to appropriate Typst elements and properties.
 
 For example, text-related properties `color`, `opacity`, and `background-color` can be applied to spans:
 
-```qmd
+```markdown
 Here is a [span with a green background]{style="background-color:green"}.
 ```
 
 `font-family` and `font-size` can be applied to a div or table:
 
-```qmd
+```markdown
 :::{style="font-family: helvetica"}
 This div is rendered in Helvetica.
 :::
@@ -226,7 +226,10 @@ This div is rendered in Helvetica.
 
 See [the Advanced documentation](/docs/advanced/typst/typst-css.qmd#supported-elements-and-properties) for supported elements and properties, and how to add more using Lua filters.
 
-You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here is a temperature heatmap example using `gt` in R, and Pandas in Python.
+You are most likely to encounter Typst CSS when using libraries that produce HTML tables. 
+The translation of the CSS means your table in Typst should look similar to how it looks in HTML without any intervention on your part.
+
+For example, here is a temperature heatmap using `gt` in R, and Pandas in Python.
 
 ::: {.panel-tabset}
 

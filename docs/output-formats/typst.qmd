@@ -226,19 +226,31 @@ This div is rendered in Helvetica.
 
 See [the Advanced documentation](/docs/advanced/typst/typst-css.qmd#supported-elements-and-properties) for supported elements and properties, and how to add more using Lua filters.
 
-You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here is a temperature heatmap example using `gt` in R. Pandas soon.
+You are most likely to encounter Typst CSS when using libraries that produce HTML tables. Here is a temperature heatmap example using `gt` in R, and Pandas in Python.
 
 ::: {.panel-tabset}
 
 #### R - gt
+:::: {layout-ncol=2}
 ![](images/typst-tables-gt-temps.png){height=200px}
 
-[gt temps example](examples/gt-temps.qmd)
+````r
+```{{r}}
+{{< include examples/gt-temps.R >}}
+```
+````
+::::
 
 #### Python - Pandas
+:::: {layout-ncol=2}
 ![](images/typst-tables-pandas-temps.png){height=200px}
 
-[gt temps example](examples/pandas-temps.qmd)
+````python
+```{{python}}
+{{< include examples/pandas-temps.py >}}
+```
+````
+::::
 
 :::
 

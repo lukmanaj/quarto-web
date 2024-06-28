@@ -16,8 +16,8 @@ const outputDir = '_site';
 
 const args = Deno.args;
 if(args.length < 2 || args[0] == '-h') {
-  console.error('usage: typst-snapshot source.qmd dest.png')
-  console.error('  paths can be relative or relative but must be within a quarto project')
+  console.error('usage: quarto run snapshot.typst.ts source.qmd dest.png')
+  console.error('  source and dest paths can be absolute or relative but must be within a quarto project')
   Deno.exit(1)
 }
 const sourcePath = toAbsolute(args[0]),
@@ -83,6 +83,3 @@ if (!dryRun) {
       Deno.exit(2);
   }
 }
-
-// quarto render  -M keep-typ:true -M echo:false -M warning:false -M title:false
-// magick convert -verbose -density 300 -trim +repage file pandas-confusion-matrix.pdf -quality 100 -flatten -sharpen 0x1.0 pandas-cf.png

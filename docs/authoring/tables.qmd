@@ -489,7 +489,7 @@ When rendered, this results in the following output for HTML and PDF formats:
 
 :::
 
-In addition, Quarto supports the specification of embedded Markdown content in tables.
+In addition, Quarto supports the specification of embedded  Markdown content in tables.
 This is done by providing a data attribute `qmd` or `qmd-base64` in an embedded `span` or `div` node.
 These nodes can appear anywhere that such content is allowed: table headers, footers, cells, captions, _etc._ 
 
